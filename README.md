@@ -1,8 +1,8 @@
-# Possible delete regression in 3.1
+# Possible delete regression in 3.1?
 
 The following query...
 
-```
+```scala
 // Delete all messages that have a duplicate (leaving zero rows with that content)
 val zap =
   messages.filter { msg =>
@@ -18,10 +18,10 @@ In a table containing the rows:
 - Hello
 - Yo!
 
-I would expect the query to remote the first two rows.
+...I would expect the query to remove the first two rows.
 
-Under 3.0 it removes 2 rows (yay!)
-Under 3.1 it removes 3 rows (huh?).
+- Under 3.0 it removes 2 rows (yay!)
+- Under 3.1 it removes 3 rows (huh?).
 
 This is with h2.
 
